@@ -5,5 +5,5 @@ import { Editor } from './editor';
 
 ReactDOM.render(
   <Editor />,
-  document.getElementById('container'),
+  document.getElementById('app'),
 );
