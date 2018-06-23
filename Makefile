@@ -36,7 +36,10 @@ copy_public:
 ####################################
 .PHONY: build
 build: ENV ?= dev ## Building some sources.
-build: copy
+build: copy build_scripts build_styles
+
+.PHONY: build_scripts
+build_scripts:
 	$(NPM_BIN_DIR)/tsc
 ifeq ($(ENV),prd)
 	RELEASE_CHANNEL=production
@@ -45,6 +48,10 @@ else
 	RELEASE_CHANNEL=development
 	$(NPM_BIN_DIR)/webpack --mode development
 endif
+
+.PHONY: build_styles
+build_styles:
+	$(NPM_BIN_DIR)/postcss assets/styles/index.pcss --config postcss.config.js --output dist/main.css
 
 ####################################
 # Preview server
