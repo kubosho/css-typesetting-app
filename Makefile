@@ -27,6 +27,16 @@ clean_dist:
 	$(NPM_BIN_DIR)/rimraf $(DIST_DIR)/*.*
 
 ####################################
+# Linter
+####################################
+.PHONY: lint
+lint: lint_js ## Lint scripts.
+
+.PHONY: lint_js
+lint_js:
+	$(NPM_BIN_DIR)/eslint --ext=.js,.jsx,.mjs $(CURDIR)
+
+####################################
 # Copy
 ####################################
 .PHONY: copy
