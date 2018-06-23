@@ -2,6 +2,7 @@ NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN_DIR := $(NPM_MOD_DIR)/.bin
 
 SRC_DIR := $(CURDIR)/src
+DIST_DIR := $(CURDIR)/dist
 PUBLIC_DIR := $(CURDIR)/public
 
 ####################################
@@ -15,11 +16,15 @@ help:
 # Clean
 ####################################
 .PHONY: clean
-clean: clean_src ## Clean up before building the code.
+clean: clean_src clean_dist ## Clean up before building the code.
 
 .PHONY: clean_src
 clean_src:
 	$(NPM_BIN_DIR)/rimraf $(SRC_DIR)/*.js
+
+.PHONY: clean_dist
+clean_dist:
+	$(NPM_BIN_DIR)/rimraf $(DIST_DIR)/*.*
 
 ####################################
 # Copy
