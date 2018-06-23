@@ -25,7 +25,7 @@ clean_src:
 # Copy
 ####################################
 .PHONY: copy
-copy: copy_public ## Copy some files to dist/.
+copy: copy_public ## Copy files from public/ to dist/.
 
 .PHONY: copy_public
 copy_public:
@@ -35,7 +35,7 @@ copy_public:
 # Build
 ####################################
 .PHONY: build
-build: ENV ?= dev ## Building some sources.
+build: ENV ?= dev ## Building scripts and stylesheets.
 build: copy build_scripts build_styles
 
 .PHONY: build_scripts
