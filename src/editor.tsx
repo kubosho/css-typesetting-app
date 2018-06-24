@@ -1,15 +1,15 @@
-import * as React from 'react';
 import {
   Editor as DraftJsEditor,
   EditorState as DraftJsEditorState,
 } from 'draft-js';
+import * as React from 'react';
 
 type State = {
   editorState: DraftJsEditorState;
 };
 
 export class Editor extends React.Component {
-  state: State;
+  public state: State;
 
   constructor(props: any) {
     super(props);
@@ -21,11 +21,11 @@ export class Editor extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  onChange(editorState: any) {
+  private onChange(editorState: any) {
     this.setState({ editorState });
   }
 
-  render() {
+  public render() {
     return (
       <DraftJsEditor
         editorState={this.state.editorState}
