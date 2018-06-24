@@ -4,13 +4,21 @@ CSS Typesetting App.
 
 ## Contribution
 
+### Prepare
+
+Install required modules to development.
+
+```shell
+make init
+```
+
 ### Requirements
 
 Please install these before you build in your environment.
 
 - node.js (look at [.node-version](.node-version))
 - [yarn](https://yarnpkg.com/en/docs/install)
-- make (if your use Windows, use WSL or [MozillaBuild](https://wiki.mozilla.org/MozillaBuild).)
+- make (if your use Windows, use WSL or [MozillaBuild](https://wiki.mozilla.org/MozillaBuild))
 
 ### Commands
 
