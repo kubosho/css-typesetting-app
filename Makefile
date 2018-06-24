@@ -30,11 +30,15 @@ clean_dist:
 # Linter
 ####################################
 .PHONY: lint
-lint: lint_js ## Lint scripts.
+lint: lint_js lint_ts ## Lint scripts.
 
 .PHONY: lint_js
 lint_js:
 	$(NPM_BIN_DIR)/eslint --ext=.js,.jsx,.mjs $(CURDIR)
+
+.PHONY: lint_ts
+lint_ts:
+	$(NPM_BIN_DIR)/tslint --config $(CURDIR)/tslint.json --project $(CURDIR)/tsconfig.json
 
 ####################################
 # Copy
