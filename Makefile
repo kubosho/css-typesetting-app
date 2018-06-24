@@ -4,6 +4,7 @@ NPM_BIN_DIR := $(NPM_MOD_DIR)/.bin
 SRC_DIR := $(CURDIR)/src
 DIST_DIR := $(CURDIR)/dist
 PUBLIC_DIR := $(CURDIR)/public
+ASSETS_DIR := $(CURDIR)/assets
 
 ####################################
 # Self-documentize utility
@@ -43,6 +44,24 @@ lint_ts:
 .PHONY: lint_pcss
 lint_pcss:
 	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(CURDIR)/assets
+
+####################################
+# Formatter
+####################################
+.PHONY: format
+format: format_js format_ts format_pcss ## Format scripts and stylesheets.
+
+.PHONY: format_js
+format_js:
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(CURDIR)/*.js
+
+.PHONY: format_ts
+format_ts:
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(SRC_DIR)/*.{ts,tsx}
+
+.PHONY: format_pcss
+format_pcss:
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(ASSETS_DIR)/**/*.pcss
 
 ####################################
 # Copy

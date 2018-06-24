@@ -30,6 +30,7 @@
     "postcss-cli": "^5.0.1",
     "postcss-custom-media": "^6.0.0",
     "postcss-import": "^11.1.0",
+    "prettier": "^1.13.5",
     "react-test-renderer": "^16.4.1",
     "rimraf": "^2.6.2",
     "stylelint": "^9.3.0",
