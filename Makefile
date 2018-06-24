@@ -30,7 +30,7 @@ clean_dist:
 # Linter
 ####################################
 .PHONY: lint
-lint: lint_js lint_ts ## Lint scripts.
+lint: lint_js lint_ts lint_pcss ## Lint scripts and stylesheets.
 
 .PHONY: lint_js
 lint_js:
@@ -39,6 +39,10 @@ lint_js:
 .PHONY: lint_ts
 lint_ts:
 	$(NPM_BIN_DIR)/tslint --config $(CURDIR)/tslint.json --project $(CURDIR)/tsconfig.json
+
+.PHONY: lint_pcss
+lint_pcss:
+	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(CURDIR)/assets
 
 ####################################
 # Copy
