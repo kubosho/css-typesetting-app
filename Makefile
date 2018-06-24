@@ -35,7 +35,7 @@ lint: lint_js lint_ts lint_pcss ## Lint scripts and stylesheets.
 
 .PHONY: lint_js
 lint_js:
-	$(NPM_BIN_DIR)/eslint --ext=.js,.jsx,.mjs $(CURDIR)
+	$(NPM_BIN_DIR)/eslint --config $(CURDIR)/.eslintrc.js --ext=.js,.jsx,.mjs $(CURDIR)
 
 .PHONY: lint_ts
 lint_ts:
@@ -93,7 +93,7 @@ endif
 
 .PHONY: build_styles
 build_styles:
-	$(NPM_BIN_DIR)/postcss assets/styles/index.pcss --config postcss.config.js --output dist/main.css
+	$(NPM_BIN_DIR)/postcss assets/styles/index.pcss --config $(CURDIR)/postcss.config.js --output dist/main.css
 
 ####################################
 # Preview server
@@ -103,4 +103,4 @@ serve: serve_with_bs ## Launch preview server with browser-sync.
 
 .PHONY: serve_with_bs
 serve_with_bs:
-	$(NPM_BIN_DIR)/browser-sync start --config bs-config.js
+	$(NPM_BIN_DIR)/browser-sync start --config $(CURDIR)/bs-config.js
