@@ -1,5 +1,7 @@
 # CSS Typesetting App
 
+[![CircleCI](https://circleci.com/gh/kubosho/css-typesetting-app.svg?style=svg)](https://circleci.com/gh/kubosho/css-typesetting-app)
+
 CSS Typesetting App.
 
 ## Contribution
