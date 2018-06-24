@@ -57,7 +57,7 @@ format_js:
 
 .PHONY: format_ts
 format_ts:
-	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(SRC_DIR)/*.ts
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(SRC_DIR)/*.{ts,tsx}
 
 .PHONY: format_pcss
 format_pcss:
