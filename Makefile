@@ -70,6 +70,10 @@ format_ts:
 format_pcss:
 	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(ASSETS_DIR)/**/*.pcss
 
+.PHONY: check_format
+check_format: format
+	git diff --exit-code
+
 ####################################
 # Copy
 ####################################
