@@ -1,0 +1,26 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rules": {
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
+    "interface-over-type-literal": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "static-field",
+          "static-method",
+          "instance-field",
+          "constructor",
+          "instance-method"
+        ]
+      }
+    ]
+  }
+}
