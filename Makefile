@@ -28,7 +28,7 @@ clean: clean_src clean_dist ## Clean up before building the code.
 
 .PHONY: clean_src
 clean_src:
-	$(NPM_BIN_DIR)/rimraf $(SRC_DIR)/*.js
+	$(NPM_BIN_DIR)/rimraf $(SRC_DIR)/*.{js,jsx}
 
 .PHONY: clean_dist
 clean_dist:
@@ -64,7 +64,7 @@ format_js:
 
 .PHONY: format_ts
 format_ts:
-	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(SRC_DIR)/*.{ts,tsx}
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(SRC_DIR)/**/*.{ts,tsx}
 
 .PHONY: format_pcss
 format_pcss:
@@ -89,18 +89,20 @@ copy_public:
 ####################################
 .PHONY: build
 build: ENV ?= dev ## Building scripts and stylesheets.
-build: copy build_scripts build_styles
+build:
+ifeq ($(ENV),prd)
+	$(MAKE) _build RELEASE_CHANNEL=production
+else
+	$(MAKE) _build RELEASE_CHANNEL=development
+endif
+
+.PHONY: _build
+_build: copy build_scripts build_styles
 
 .PHONY: build_scripts
 build_scripts:
 	$(NPM_BIN_DIR)/tsc
-ifeq ($(ENV),prd)
-	RELEASE_CHANNEL=production
-	$(NPM_BIN_DIR)/webpack --mode production
-else
-	RELEASE_CHANNEL=development
-	$(NPM_BIN_DIR)/webpack --mode development
-endif
+	$(NPM_BIN_DIR)/webpack --config $(CURDIR)/webpack.config.js
 
 .PHONY: build_styles
 build_styles:
