@@ -89,18 +89,20 @@ copy_public:
 ####################################
 .PHONY: build
 build: ENV ?= dev ## Building scripts and stylesheets.
-build: copy build_scripts build_styles
+build:
+ifeq ($(ENV),prd)
+	$(MAKE) _build RELEASE_CHANNEL=production
+else
+	$(MAKE) _build RELEASE_CHANNEL=development
+endif
+
+.PHONY: _build
+_build: copy build_scripts build_styles
 
 .PHONY: build_scripts
 build_scripts:
 	$(NPM_BIN_DIR)/tsc
-ifeq ($(ENV),prd)
-	RELEASE_CHANNEL=production
-	$(NPM_BIN_DIR)/webpack --mode production
-else
-	RELEASE_CHANNEL=development
-	$(NPM_BIN_DIR)/webpack --mode development
-endif
+	$(NPM_BIN_DIR)/webpack --config $(CURDIR)/webpack.config.js
 
 .PHONY: build_styles
 build_styles:
