@@ -4,6 +4,16 @@
 
 CSS Typesetting App.
 
+## Motivation
+
+Two reasons to making this application.
+
+- Write a manuscript in Markdown format on my PC or iPad, and output to PDF.
+- I want to make a complex things. This reason than stronger.
+
+This application is basically a project for myself but I don't refuse Issue or Pull Request. It is welcome.
+I decide whether to implement of proposal of the new feature.
+
 ## Contribution
 
 ### Prepare
