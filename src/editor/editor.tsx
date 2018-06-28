@@ -1,29 +1,25 @@
-import { Editor as DraftJsEditor, EditorState as DraftJsEditorState } from 'draft-js';
+import * as monaco from 'monaco-editor';
 import * as React from 'react';
-import { prismDecorator } from './prismDecorator';
-
-type State = {
-  editorState: DraftJsEditorState;
-};
 
 export class Editor extends React.Component {
-  public state: State;
+  private editorContainerRef: React.RefObject<HTMLDivElement>;
+  private editor: monaco.editor.IStandaloneCodeEditor;
 
   constructor(props: any) {
     super(props);
 
-    this.state = {
-      editorState: DraftJsEditorState.createEmpty(prismDecorator),
-    };
-
-    this.onChange = this.onChange.bind(this);
+    this.editorContainerRef = React.createRef();
   }
 
-  private onChange(editorState: any) {
-    this.setState({ editorState });
+  componentDidMount() {
+    this.editor = monaco.editor.create(this.editorContainerRef.current);
   }
 
-  public render() {
-    return <DraftJsEditor editorState={this.state.editorState} onChange={this.onChange} />;
+  componentWillUnmount() {
+    this.editor.dispose();
+  }
+
+  render() {
+    return <div ref={this.editorContainerRef} />;
   }
 }
