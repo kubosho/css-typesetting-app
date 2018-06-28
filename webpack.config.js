@@ -27,9 +27,16 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      // XXX: Don't use CSS Modules.
+      // This config only use so as to monaco-editor.
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        exclude: /assets/,
+      },
     ],
   },
   resolve: {
-    extensions: ['.js', '.json', '.jsx'],
+    extensions: ['.js', '.json', '.jsx', '.css'],
   },
 };
