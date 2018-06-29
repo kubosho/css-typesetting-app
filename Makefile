@@ -97,7 +97,7 @@ else
 endif
 
 .PHONY: _build
-_build: copy build_scripts build_styles
+_build: clean copy build_scripts build_styles
 
 .PHONY: build_scripts
 build_scripts:
