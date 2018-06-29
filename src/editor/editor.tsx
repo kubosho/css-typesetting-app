@@ -12,7 +12,12 @@ export class Editor extends React.Component {
   }
 
   componentDidMount() {
-    this.editor = monaco.editor.create(this.editorContainerRef.current);
+    this.editor = monaco.editor.create(this.editorContainerRef.current, {
+      language: 'markdown',
+      minimap: {
+        enabled: false,
+      },
+    });
   }
 
   componentWillUnmount() {
