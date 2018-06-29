@@ -1,9 +1,12 @@
 const path = require('path');
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const webpack = require('webpack');
 const { IS_RELEASE_CHANNEL_PRODUCTION } = require('./config/buildconfig');
 
 const mode = IS_RELEASE_CHANNEL_PRODUCTION ? 'production' : 'development';
-const monacoWebpackPlugin = new MonacoWebpackPlugin();
+const ignorePlugin = new webpack.IgnorePlugin(
+  /^((fs)|(path)|(os)|(crypto)|(source-map-support))$/,
+  /vs(\/|\\)language(\/|\\)typescript(\/|\\)lib/,
+);
 
 module.exports = {
   mode,
@@ -12,7 +15,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
-  plugins: [monacoWebpackPlugin],
   module: {
     rules: [
       {
@@ -36,7 +38,8 @@ module.exports = {
       },
     ],
   },
+  plugins: [ignorePlugin],
   resolve: {
-    extensions: ['.js', '.json', '.jsx', '.css'],
+    extensions: ['.js', '.json', '.jsx'],
   },
 };
