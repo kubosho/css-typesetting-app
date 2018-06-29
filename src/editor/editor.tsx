@@ -20,6 +20,6 @@ export class Editor extends React.Component {
   }
 
   render() {
-    return <div ref={this.editorContainerRef} />;
+    return <div className="editor" ref={this.editorContainerRef} />;
   }
 }
