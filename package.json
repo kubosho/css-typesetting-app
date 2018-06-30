@@ -30,7 +30,6 @@
     "cpx": "^1.5.0",
     "css-loader": "^0.28.11",
     "eslint": "^5.0.0",
-    "monaco-editor": "^0.13.1",
     "postcss": "^6.0.23",
     "postcss-cli": "^5.0.1",
     "postcss-custom-media": "^6.0.0",
@@ -47,6 +46,7 @@
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "monaco-editor": "^0.13.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   }
