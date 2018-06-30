@@ -35,6 +35,17 @@ clean_dist:
 	$(NPM_BIN_DIR)/rimraf $(DIST_DIR)/*.*
 
 ####################################
+# Test
+####################################
+.PHONY: test
+test: ## Execute test cases.
+	$(NPM_BIN_DIR)/ava
+
+.PHONY: update_snapshots
+update_snapshots:
+	$(NPM_BIN_DIR)/ava --update-snapshots
+
+####################################
 # Linter
 ####################################
 .PHONY: lint
