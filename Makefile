@@ -71,7 +71,7 @@ format: format_js format_ts format_pcss ## Format scripts and stylesheets.
 
 .PHONY: format_js
 format_js:
-	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(CURDIR)/*.js
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write {$(CURDIR)/*.js,$(CURDIR)/**/*.js}
 
 .PHONY: format_ts
 format_ts:
