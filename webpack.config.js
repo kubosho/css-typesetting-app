@@ -10,7 +10,7 @@ const ignorePlugin = new webpack.IgnorePlugin(
 
 module.exports = {
   mode,
-  entry: './src/index.jsx',
+  entry: './build/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
