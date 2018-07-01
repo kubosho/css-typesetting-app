@@ -28,8 +28,8 @@ init: ## Install dependencies.
 clean: clean_build clean_dist ## Clean up before building the code.
 
 .PHONY: clean_build
-clean_src:
-	$(NPM_BIN_DIR)/rimraf $(BUILD_DIR)/*.{js,jsx}
+clean_build:
+	$(NPM_BIN_DIR)/rimraf {$(BUILD_DIR)/*.{js,jsx},$(BUILD_DIR)/**/*.{js,jsx}}
 
 .PHONY: clean_dist
 clean_dist:
