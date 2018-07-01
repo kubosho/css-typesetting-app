@@ -27,7 +27,7 @@ module.exports = {
             },
           },
         ],
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /__tests__/],
       },
       // XXX: Don't use CSS Modules.
       // This config only use so as to monaco-editor.
