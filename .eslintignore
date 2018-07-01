@@ -1,0 +1,12 @@
+.github/
+.vscode/
+assets/
+dist/
+coverage/
+node_modules/
+public/
+src/**/*.js
+src/**/*.jsx
+
+# include as a lint target.
+!.eslintrc.js

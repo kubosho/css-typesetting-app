@@ -19,12 +19,14 @@
   "homepage": "https://github.com/kubosho/css-typesetting-app#readme",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
     "@babel/preset-react": "^7.0.0-beta.51",
+    "@babel/register": "^7.0.0-beta.51",
     "@types/node": "^10.3.4",
     "@types/react": "^16.4.1",
     "@types/react-dom": "^16.0.6",
-    "ava": "^0.25.0",
+    "ava": "1.0.0-beta.6",
     "babel-loader": "^8.0.0-beta",
     "browser-sync": "^2.24.4",
     "cpx": "^1.5.0",
@@ -49,5 +51,22 @@
     "monaco-editor": "^0.13.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "ava": {
+    "require": [
+      "./tools/ava_register.js"
+    ],
+    "babel": {
+      "extensions": [
+        "js",
+        "jsx"
+      ],
+      "testOptions": {
+        "presets": [
+          "@babel/react"
+        ],
+        "babelrc": false
+      }
+    }
   }
 }
