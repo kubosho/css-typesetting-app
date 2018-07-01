@@ -1,21 +1,19 @@
 module.exports = {
-  'root': true,
+  root: true,
 
-  'env': {
-    'node': true,
-    'es6': true
+  env: {
+    node: true,
+    es6: true,
   },
 
-  'extends': [
-    'eslint:recommended'
-  ],
+  extends: ['eslint:recommended'],
 
-  'parserOptions': {
-    'ecmaVersion': 2017,
-    'sourceType': 'module',
-    'ecmaFeatures': {
+  parserOptions: {
+    ecmaVersion: 2017,
+    sourceType: 'module',
+    ecmaFeatures: {
       impliedStrict: true,
-      jsx: true
-    }
-  }
+      jsx: true,
+    },
+  },
 };
