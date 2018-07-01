@@ -62,7 +62,7 @@ lint_ts:
 
 .PHONY: lint_pcss
 lint_pcss:
-	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(CURDIR)/assets
+	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(ASSETS_DIR)
 
 ####################################
 # Formatter
@@ -118,7 +118,7 @@ build_scripts:
 
 .PHONY: build_styles
 build_styles:
-	$(NPM_BIN_DIR)/postcss assets/styles/index.pcss --config $(CURDIR)/postcss.config.js --output dist/main.css
+	$(NPM_BIN_DIR)/postcss $(ASSETS_DIR)/styles/index.pcss --config $(CURDIR)/postcss.config.js --output dist/main.css
 
 ####################################
 # Preview server
