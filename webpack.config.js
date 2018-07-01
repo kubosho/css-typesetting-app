@@ -10,7 +10,7 @@ const ignorePlugin = new webpack.IgnorePlugin(
 
 module.exports = {
   mode,
-  entry: './src/index.jsx',
+  entry: './build/index.jsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
@@ -27,7 +27,7 @@ module.exports = {
             },
           },
         ],
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /__tests__/],
       },
       // XXX: Don't use CSS Modules.
       // This config only use so as to monaco-editor.

@@ -2,6 +2,7 @@ NPM_MOD_DIR := $(CURDIR)/node_modules
 NPM_BIN_DIR := $(NPM_MOD_DIR)/.bin
 
 SRC_DIR := $(CURDIR)/src
+BUILD_DIR := $(CURDIR)/build
 DIST_DIR := $(CURDIR)/dist
 PUBLIC_DIR := $(CURDIR)/public
 ASSETS_DIR := $(CURDIR)/assets
@@ -24,11 +25,11 @@ init: ## Install dependencies.
 # Clean
 ####################################
 .PHONY: clean
-clean: clean_src clean_dist ## Clean up before building the code.
+clean: clean_build clean_dist ## Clean up before building the code.
 
-.PHONY: clean_src
+.PHONY: clean_build
 clean_src:
-	$(NPM_BIN_DIR)/rimraf $(SRC_DIR)/*.{js,jsx}
+	$(NPM_BIN_DIR)/rimraf $(BUILD_DIR)/*.{js,jsx}
 
 .PHONY: clean_dist
 clean_dist:
@@ -61,7 +62,7 @@ lint_ts:
 
 .PHONY: lint_pcss
 lint_pcss:
-	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(CURDIR)/assets
+	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(ASSETS_DIR)
 
 ####################################
 # Formatter
@@ -117,7 +118,7 @@ build_scripts:
 
 .PHONY: build_styles
 build_styles:
-	$(NPM_BIN_DIR)/postcss assets/styles/index.pcss --config $(CURDIR)/postcss.config.js --output dist/main.css
+	$(NPM_BIN_DIR)/postcss $(ASSETS_DIR)/styles/index.pcss --config $(CURDIR)/postcss.config.js --output dist/main.css
 
 ####################################
 # Preview server
