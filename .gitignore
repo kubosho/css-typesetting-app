@@ -1,7 +1,5 @@
+build/
 dist/
 node_modules/
 
-src/**/*.js
-src/**/*.jsx
-src/**/*.map
 *.log
