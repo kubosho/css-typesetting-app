@@ -1,6 +1,6 @@
 .github/
 .vscode/
-assets/
+build/
 dist/
 coverage/
 node_modules/
