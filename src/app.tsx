@@ -7,8 +7,8 @@ export class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Sidebar />
-        <Editor />
+        <Sidebar className="sidebar" />
+        <Editor className="editor" />
       </React.Fragment>
     );
   }
