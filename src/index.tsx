@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Editor } from './editor/editor';
+import { App } from './app';
 
-ReactDOM.render(<Editor />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
