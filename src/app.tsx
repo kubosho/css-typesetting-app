@@ -1,15 +1,15 @@
 import * as React from 'react';
 
-import { Editor } from '../editor/editor';
-import { Sidebar } from '../sidebar/sidebar';
+import { Editor } from './editor/editor';
+import { Sidebar } from './sidebar/sidebar';
 
 export class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="app">
         <Sidebar className="sidebar" />
         <Editor className="editor" />
-      </React.Fragment>
+      </div>
     );
   }
 }

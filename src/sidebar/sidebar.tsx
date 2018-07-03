@@ -1,11 +1,19 @@
 import * as React from 'react';
+// @ts-ignore
+import { default as classNames } from 'classnames';
 
-export class Sidebar extends React.Component {
-  constructor(props: any) {
+type Props = {
+  className?: string;
+};
+
+export class Sidebar extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
   }
 
   render() {
-    return <aside className="sidebar" />;
+    const { className } = this.props;
+
+    return <aside className={classNames('sidebar', className)} />;
   }
 }
