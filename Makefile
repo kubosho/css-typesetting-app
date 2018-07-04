@@ -39,11 +39,13 @@ clean_dist:
 ####################################
 .PHONY: test
 test: ## Execute test cases.
-	$(NPM_BIN_DIR)/ava
+	$(NPM_BIN_DIR)/tsc
+	$(NPM_BIN_DIR)/ava --verbose
 
 .PHONY: update_snapshots
 update_snapshots:
-	$(NPM_BIN_DIR)/ava --update-snapshots
+	$(NPM_BIN_DIR)/tsc
+	$(NPM_BIN_DIR)/ava --verbose --update-snapshots
 
 ####################################
 # Linter
