@@ -50,6 +50,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "monaco-editor": "^0.13.1",
+    "option-t": "^17.1.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
