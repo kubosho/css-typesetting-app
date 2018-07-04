@@ -4542,6 +4542,10 @@ opn@4.0.2:
     object-assign "^4.0.1"
     pinkie-promise "^2.0.0"
 
+option-t@^17.1.2:
+  version "17.1.2"
+  resolved "https://registry.yarnpkg.com/option-t/-/option-t-17.1.2.tgz#1c93e5f2ce965ac117db32c8d828715a6ad74abf"
+
 optionator@^0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
