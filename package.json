@@ -55,6 +55,11 @@
     "react-dom": "^16.4.1"
   },
   "ava": {
+    "files": [
+      "src/__tests__/test_*.*",
+      "src/**/__tests__/test_*.*",
+      "!build/"
+    ],
     "require": [
       "./tools/ava_register.js"
     ],
