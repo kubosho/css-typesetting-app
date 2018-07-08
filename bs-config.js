@@ -49,7 +49,7 @@ module.exports = {
   rewriteRules: [
     {
       match: /Content-Security-Policy/,
-      fn: () => "DISABLED-Content-Security-Policy",
+      fn: () => 'DISABLED-Content-Security-Policy',
     },
   ],
   open: 'local',
