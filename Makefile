@@ -38,12 +38,12 @@ clean_dist:
 # Test
 ####################################
 .PHONY: test
-test: ## Execute test cases.
+test: clean ## Execute test cases.
 	$(NPM_BIN_DIR)/tsc
 	$(NPM_BIN_DIR)/ava --verbose
 
 .PHONY: update_snapshots
-update_snapshots:
+update_snapshots: clean
 	$(NPM_BIN_DIR)/tsc
 	$(NPM_BIN_DIR)/ava --verbose --update-snapshots
 
