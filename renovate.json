@@ -5,6 +5,9 @@
   "assignees": [
     "kubosho"
   ],
+  "automerge": true,
+  "automergeType": "pr-comment",
+  "automergeComment": "@renovate r+",
   "labels": [
     "A-repository/dependency",
     "C-gardening"
