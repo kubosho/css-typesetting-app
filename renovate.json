@@ -7,7 +7,7 @@
   ],
   "automerge": true,
   "automergeType": "pr-comment",
-  "automergeComment": "@renovate r+",
+  "automergeComment": "@renovate-bot r+",
   "labels": [
     "A-repository/dependency",
     "C-gardening"
