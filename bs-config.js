@@ -46,7 +46,12 @@ module.exports = {
   logConnections: false,
   logFileChanges: true,
   logSnippet: true,
-  rewriteRules: [],
+  rewriteRules: [
+    {
+      match: /Content-Security-Policy/,
+      fn: () => 'DISABLED-Content-Security-Policy',
+    },
+  ],
   open: 'local',
   browser: 'default',
   cors: false,

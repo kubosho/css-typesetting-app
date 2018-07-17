@@ -5,7 +5,6 @@ SRC_DIR := $(CURDIR)/src
 BUILD_DIR := $(CURDIR)/build
 DIST_DIR := $(CURDIR)/dist
 PUBLIC_DIR := $(CURDIR)/public
-ASSETS_DIR := $(CURDIR)/assets
 
 ####################################
 # Self-documentize utility
@@ -39,12 +38,14 @@ clean_dist:
 # Test
 ####################################
 .PHONY: test
-test: ## Execute test cases.
-	$(NPM_BIN_DIR)/ava
+test: clean ## Execute test cases.
+	$(NPM_BIN_DIR)/tsc
+	$(NPM_BIN_DIR)/ava --verbose
 
 .PHONY: update_snapshots
-update_snapshots:
-	$(NPM_BIN_DIR)/ava --update-snapshots
+update_snapshots: clean
+	$(NPM_BIN_DIR)/tsc
+	$(NPM_BIN_DIR)/ava --verbose --update-snapshots
 
 ####################################
 # Linter
@@ -62,7 +63,7 @@ lint_ts:
 
 .PHONY: lint_pcss
 lint_pcss:
-	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js $(ASSETS_DIR)
+	$(NPM_BIN_DIR)/stylelint --config $(CURDIR)/stylelint.config.js {$(SRC_DIR)/*.pcss,$(SRC_DIR)/**/*.pcss}
 
 ####################################
 # Formatter
@@ -80,7 +81,7 @@ format_ts:
 
 .PHONY: format_pcss
 format_pcss:
-	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write $(ASSETS_DIR)/**/*.pcss
+	$(NPM_BIN_DIR)/prettier --config $(CURDIR)/.prettierrc.js --write {$(SRC_DIR)/*.pcss,$(SRC_DIR)/**/*.pcss}
 
 .PHONY: check_format
 check_format: format
@@ -118,7 +119,7 @@ build_scripts:
 
 .PHONY: build_styles
 build_styles:
-	$(NPM_BIN_DIR)/postcss $(ASSETS_DIR)/styles/index.pcss --config $(CURDIR)/postcss.config.js --output dist/main.css
+	$(NPM_BIN_DIR)/postcss $(SRC_DIR)/index.pcss --config $(CURDIR)/postcss.config.js --output $(DIST_DIR)/main.css
 
 ####################################
 # Preview server

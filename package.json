@@ -48,11 +48,18 @@
     "webpack-cli": "^3.0.8"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "monaco-editor": "^0.13.1",
+    "option-t": "^17.1.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "ava": {
+    "files": [
+      "src/__tests__/test_*.*",
+      "src/**/__tests__/test_*.*",
+      "!build/"
+    ],
     "require": [
       "./tools/ava_register.js"
     ],
