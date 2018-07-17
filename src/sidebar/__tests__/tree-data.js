@@ -34,7 +34,7 @@ export const testTree = {
       children: [
         {
           name: 'bar_file',
-        }
+        },
       ],
     },
     {
