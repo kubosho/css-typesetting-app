@@ -3,7 +3,7 @@ version: 2
 jobs:
   prepare:
     docker:
-      - image: circleci/node:10.6.0-stretch-browsers
+      - image: circleci/node:10.7.0-stretch-browsers
 
     steps:
       - checkout
@@ -17,7 +17,7 @@ jobs:
 
   test:
     docker:
-      - image: circleci/node:10.6.0-stretch-browsers
+      - image: circleci/node:10.7.0-stretch-browsers
 
     steps:
       - attach_workspace:
