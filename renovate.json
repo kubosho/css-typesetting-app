@@ -5,7 +5,7 @@
   "assignees": [
     "kubosho"
   ],
-  "schedule": ["after 10am and before 19pm on every weekend"],
+  "schedule": ["every weekend"],
   "labels": [
     "A-repository/dependency",
     "C-gardening"
