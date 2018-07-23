@@ -28,7 +28,7 @@
     "@types/react-dom": "16.0.6",
     "ava": "1.0.0-beta.6",
     "babel-loader": "8.0.0-beta.4",
-    "browser-sync": "2.24.5",
+    "browser-sync": "2.24.6",
     "cpx": "1.5.0",
     "css-loader": "0.28.11",
     "eslint": "5.1.0",
