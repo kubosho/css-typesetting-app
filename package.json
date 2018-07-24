@@ -33,7 +33,7 @@
     "css-loader": "1.0.0",
     "eslint": "5.2.0",
     "postcss": "7.0.1",
-    "postcss-cli": "5.0.1",
+    "postcss-cli": "6.0.0",
     "postcss-custom-media": "6.0.0",
     "postcss-import": "11.1.0",
     "prettier": "1.13.7",
