@@ -7,6 +7,11 @@ const ignorePlugin = new webpack.IgnorePlugin(
   /^((fs)|(path)|(os)|(crypto)|(source-map-support))$/,
   /vs(\/|\\)language(\/|\\)typescript(\/|\\)lib/,
 );
+// XXX: https://github.com/Microsoft/monaco-editor-webpack-plugin/issues/13#issuecomment-390806320
+const contextReplacementPlugin = new webpack.ContextReplacementPlugin(
+  /monaco-editor(\\|\/)esm(\\|\/)vs(\\|\/)editor(\\|\/)common(\\|\/)services/,
+  __dirname,
+);
 
 module.exports = {
   mode,
@@ -38,7 +43,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [ignorePlugin],
+  plugins: [ignorePlugin, contextReplacementPlugin],
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
   },
