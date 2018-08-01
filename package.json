@@ -63,8 +63,12 @@
       "src/**/__tests__/test_*.*",
       "!build/"
     ],
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
     "require": [
-      "./tools/ava_register.js"
+      "ts-node/register"
     ],
     "babel": {
       "extensions": [
