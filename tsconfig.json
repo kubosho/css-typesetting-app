@@ -3,8 +3,8 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     "sourceMap": false,
-    "module": "esnext",
-    "target": "esnext",
+    "module": "commonjs",
+    "target": "es2016",
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node"
