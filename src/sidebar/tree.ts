@@ -55,6 +55,14 @@ export class TreeImpl implements Tree {
     return index.node;
   }
 
+  private getIndex(id: number): Undefinable<Index> {
+    return this.indexes[id];
+  }
+
+  private getIndexes(): Indexes {
+    return this.indexes;
+  }
+
   private createIndexes() {
     const startCount = this.count;
     const index = { id: startCount, node: this.tree };
@@ -65,14 +73,6 @@ export class TreeImpl implements Tree {
     if (this.tree.children && this.tree.children.length >= 1) {
       this.walk(this.tree.children, index);
     }
-  }
-
-  private getIndex(id: number): Undefinable<Index> {
-    return this.indexes[id];
-  }
-
-  private getIndexes(): Indexes {
-    return this.indexes;
   }
 
   private walk(nodes: Node[], parentNode?: Index) {
