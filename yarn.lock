@@ -899,7 +899,7 @@
   dependencies:
     csstype "^2.2.0"
 
-"@types/showdown@^1.7.5":
+"@types/showdown@1.7.5":
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/@types/showdown/-/showdown-1.7.5.tgz#91061f2f16d5bdf66b186185999ed675a8908b6a"
 
@@ -6432,7 +6432,7 @@ trough@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.2.tgz#7f1663ec55c480139e2de5e486c6aef6cc24a535"
 
-ts-node@^7.0.0:
+ts-node@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-7.0.0.tgz#a94a13c75e5e1aa6b82814b84c68deb339ba7bff"
   dependencies:
