@@ -28,7 +28,7 @@
     "@types/react-dom": "16.0.7",
     "@types/showdown": "1.7.5",
     "ava": "1.0.0-beta.7",
-    "babel-loader": "8.0.0-beta.4",
+    "babel-loader": "8.0.4",
     "browser-sync": "2.24.7",
     "cpx": "1.5.0",
     "css-loader": "1.0.1",
